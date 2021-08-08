@@ -8,6 +8,7 @@ Correlation determine how strongly linked two varibles are to each other.
 
 Ori: https://stackabuse.com/covariance-and-correlation-in-python
 Data: https://www.kaggle.com/uciml/iris
+A good understand: https://www.zhihu.com/question/20852004
 '''
 
 
