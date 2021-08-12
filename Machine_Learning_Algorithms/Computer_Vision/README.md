@@ -1,4 +1,5 @@
-参考文献1： 
+参考文献1：[Computer vision: algorithms and applications by Szeliski](https://d1wqtxts1xzle7.cloudfront.net/54343495/Algorithms_and_ApplicationsSzeliskiBook_20100805_draft-with-cover-page-v2.pdf?Expires=1628741745&Signature=PgJGbQ7bQ38c8q~XrsUW0Foxt55c2Qv1SSIUSiGGB0~MmGl9VsgquyRQuZYvtn0B-ieyjXbMAzW3G3txkHPnUu6Y7z3kzZYH2LsPpjd~mwFEAehju7oqdiZYqAJdqSY1HroTW5u5NH92SMf33birjcBbxekzSNHFAy1Cq4JQntmeezShnuAs92fsDtSrOSXfBloeVQ3Wmq8IBIT~mcQUjzdgGWEmqginDwHFtuD1vPSy3UB54AwpMhdYNyY5WotOZZrhRVAS7CgAS1u8XxrhG5oJnxeOPVYLLPqnUowJ4zkHKOHtlltdHog1dMLJFvI1~48nCOWieCCQ3OfDOK67Gw__&Key-Pair-Id=APKAJLOHF5GGSLRBV4ZA)
 
-参考文献2：Deep Learning for Vision Systems by Mohamed Elgendy 
+参考文献2：[Deep Learning for Vision Systems by Mohamed Elgendy](http://library.lol/main/B26784397A47DF876A8A9EF6060D9819)
+
 Code: https://github.com/moelgendy/deep_learning_for_vision_systems
