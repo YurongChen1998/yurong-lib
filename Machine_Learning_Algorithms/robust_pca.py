@@ -60,60 +60,60 @@ class robust_PCA(nn.Module):
                 
         return self.L, self.S        
   
-     
-num_case = 200
-band = 50
-rank = 5
-
-rand_row = torch.rand(rank, num_case)
-toy_data = torch.zeros([band, num_case])
-for i in range(band):
-    idx = int(torch.rand(1) * rank)
-    toy_data[i, :] = rand_row[idx, :]
-
-rand_noise = torch.rand(band, num_case)
-anomaly = torch.sign(rand_noise - 0.5)
-rand_noise[rand_noise>0.2] = 0
-anomaly = anomaly * rand_noise
-data = toy_data + anomaly
-
-rpca = robust_PCA(data)
-L, S = rpca(data)
-
-##### Plot Figure #####
-fig, axes = plt.subplots(2, 3)
-axes[0, 0].imshow(toy_data, cmap='gray')
-axes[0, 0].set_title('Low Rank Matrix')
-axes[0, 1].imshow(anomaly, cmap='gray')
-axes[0, 1].set_title('Anomaly Matrix')
-axes[0, 2].imshow(data, cmap='gray')
-axes[0, 2].set_title('Data Matrix')
-
-axes[1, 0].imshow(L, cmap='gray')
-axes[1, 0].set_title('Reconstructed Low Rank Matrix')
-axes[1, 1].imshow(S, cmap='gray')
-axes[1, 1].set_title('Reconstructed Anomaly Matrix')
-axes[1, 2].imshow(L + S, cmap='gray')
-axes[1, 2].set_title('Reconstructed Data Matrix')
-plt.show()
-
-
-print("..............Data Matrix..............")
-print(data)
-print("..............Reconstructed Data Matrix..............")
-print(L + S)
-
-print(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
-
-print("..............Low Rank Matrix..............")
-print(toy_data)
-print("..............Reconstructed Low Rank Matrix..............")
-print(L)
-
-print(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
-
-print("..............Anomaly Matrix..............")
-print(anomaly)
-print("..............Reconstructed Anomaly Matrix..............")
-print(S)
-
+if __name__ == '__main__':     
+    num_case = 200
+    band = 50
+    rank = 5
+    
+    rand_row = torch.rand(rank, num_case)
+    toy_data = torch.zeros([band, num_case])
+    for i in range(band):
+        idx = int(torch.rand(1) * rank)
+        toy_data[i, :] = rand_row[idx, :]
+    
+    rand_noise = torch.rand(band, num_case)
+    anomaly = torch.sign(rand_noise - 0.5)
+    rand_noise = torch.where(rand_noise>0.2, 0, 1)
+    anomaly = anomaly * rand_noise
+    data = toy_data + anomaly
+    
+    rpca = robust_PCA(data)
+    L, S = rpca(data)
+    
+    ##### Plot Figure #####
+    fig, axes = plt.subplots(2, 3)
+    axes[0, 0].imshow(toy_data, cmap='gray')
+    axes[0, 0].set_title('Low Rank Matrix')
+    axes[0, 1].imshow(anomaly, cmap='gray')
+    axes[0, 1].set_title('Anomaly Matrix')
+    axes[0, 2].imshow(data, cmap='gray')
+    axes[0, 2].set_title('Data Matrix')
+    
+    axes[1, 0].imshow(L, cmap='gray')
+    axes[1, 0].set_title('Reconstructed Low Rank Matrix')
+    axes[1, 1].imshow(S, cmap='gray')
+    axes[1, 1].set_title('Reconstructed Anomaly Matrix')
+    axes[1, 2].imshow(L + S, cmap='gray')
+    axes[1, 2].set_title('Reconstructed Data Matrix')
+    plt.show()
+    
+    
+    print("..............Data Matrix..............")
+    print(data)
+    print("..............Reconstructed Data Matrix..............")
+    print(L + S)
+    
+    print(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
+    
+    print("..............Low Rank Matrix..............")
+    print(toy_data)
+    print("..............Reconstructed Low Rank Matrix..............")
+    print(L)
+    
+    print(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
+    
+    print("..............Anomaly Matrix..............")
+    print(anomaly)
+    print("..............Reconstructed Anomaly Matrix..............")
+    print(S)
+    
