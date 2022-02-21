@@ -1,1 +1,1 @@
-[These tables show the robustness tests performances of the paper "Towards to Robust and Generalized Medical Image Segmentation Framework"](Supplementary materials.pdf).
+[These tables show the robustness tests performances of the paper "Towards to Robust and Generalized Medical Image Segmentation Framework"](https://github.com/YurongChen1998/yurong-lib/blob/main/pytorch/PSPNet_SWAE/results/Supplementary%20materials.pdf).
