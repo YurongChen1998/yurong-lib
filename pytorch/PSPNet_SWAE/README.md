@@ -1,1 +1,1 @@
-This is the PSPNet coupled with AE for medical image segmentation.
+This is the code for TAE-Seg: Generalized Lung Segmentation via Tile-wise AutoEncoder Enhanced Network
